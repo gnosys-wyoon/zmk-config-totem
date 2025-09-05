@@ -1,0 +1,28 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    totem_layout: totem_layout {
+        compatible = "zmk,physical-layout";
+        /* 38 keys total; rough coordinates are fine for Studio visualization.
+           Feel free to tweak spacing/offsets later. */
+        keys = <
+            /* Row 0 (10) */
+            ZMK_KEY(  0,   0, 0)  ZMK_KEY( 19,   0, 0)  ZMK_KEY( 38,   0, 0)  ZMK_KEY( 57,   0, 0)  ZMK_KEY( 76,   0, 0)
+            ZMK_KEY(134,   0, 0)  ZMK_KEY(153,   0, 0)  ZMK_KEY(172,   0, 0)  ZMK_KEY(191,   0, 0)  ZMK_KEY(210,   0, 0)
+
+            /* Row 1 (10) */
+            ZMK_KEY(  0,  19, 0)  ZMK_KEY( 19,  19, 0)  ZMK_KEY( 38,  19, 0)  ZMK_KEY( 57,  19, 0)  ZMK_KEY( 76,  19, 0)
+            ZMK_KEY(134,  19, 0)  ZMK_KEY(153,  19, 0)  ZMK_KEY(172,  19, 0)  ZMK_KEY(191,  19, 0)  ZMK_KEY(210,  19, 0)
+
+            /* Row 2 + outer columns (12) */
+            ZMK_KEY(-10,  40, 0)  /* RC(3,0) “outer” */
+            ZMK_KEY(  0,  38, 0)  ZMK_KEY( 19,  38, 0)  ZMK_KEY( 38,  38, 0)  ZMK_KEY( 57,  38, 0)  ZMK_KEY( 76,  38, 0)
+            ZMK_KEY(134,  38, 0)  ZMK_KEY(153,  38, 0)  ZMK_KEY(172,  38, 0)  ZMK_KEY(191,  38, 0)  ZMK_KEY(210,  38, 0)
+            ZMK_KEY(220,  40, 0)  /* RC(3,9) “outer” */
+
+            /* Thumb row (6) */
+            ZMK_KEY( 48,  62, 0)  ZMK_KEY( 67,  62, 0)  ZMK_KEY( 86,  62, 0)
+            ZMK_KEY(124,  62, 0)  ZMK_KEY(143,  62, 0)  ZMK_KEY(162,  62, 0)
+        >;
+    };
+};
