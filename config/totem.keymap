@@ -20,6 +20,7 @@
 #define NAV  1
 #define SYM  2
 #define ADJ  3
+#define GAME 4
 
 &mt {
   quick-tap-ms = <125>;
@@ -93,16 +94,43 @@
                 bindings = <&kp UNDER>;
             };
 
-            // Quick tab/caps word for coding
+            // Quick tab for coding
             combo_tab {
                 timeout-ms = <40>;
                 key-positions = <10 11>;  // A + S
                 bindings = <&kp TAB>;
             };
-            combo_caps {
+
+            // Navigation combos - useful for system navigation
+            combo_printscreen {
                 timeout-ms = <40>;
-                key-positions = <18 19>;  // L + ;
-                bindings = <&kp CAPS>;  // caps_word not available, using CAPS
+                key-positions = <18 19>;  // L + ; (replacing CAPS)
+                bindings = <&kp PSCRN>;
+            };
+            combo_home {
+                timeout-ms = <40>;
+                key-positions = <1 2>;  // W + E
+                bindings = <&kp HOME>;
+            };
+            combo_end {
+                timeout-ms = <40>;
+                key-positions = <7 8>;  // I + O
+                bindings = <&kp END>;
+            };
+            combo_pageup {
+                timeout-ms = <40>;
+                key-positions = <11 12>;  // S + D
+                bindings = <&kp PG_UP>;
+            };
+            combo_pagedown {
+                timeout-ms = <40>;
+                key-positions = <17 18>;  // K + L
+                bindings = <&kp PG_DN>;
+            };
+            combo_numlock {
+                timeout-ms = <40>;
+                key-positions = <22 23>;  // X + C
+                bindings = <&kp KP_NLCK>;
             };
     };
 
@@ -182,22 +210,22 @@ label= "NAVI"                              ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "SYM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-// SYMBOLS LAYER - Sparse layout matching Studio config with VSCode shortcuts
+// SYMBOLS LAYER - Programming symbols (brackets via combos) + VSCode shortcuts
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ^     ┃     &     ┃     `     ┃     '     ┃     -     ┃
+//             ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ^     ┃     &     ┃     *     ┃     +     ┃     =     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   Ctrl+~  ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   ┃   trans   ┃     =     ┃     ~     ┃     "     ┃     _     ┃
+//             ┃   Ctrl+~  ┃     <     ┃     >     ┃     /     ┃     \     ┃   ┃     :     ┃     ;     ┃     '     ┃     "     ┃     ?     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃   trans   ┃   Ctrl+Z  ┃   Ctrl+X  ┃   Ctrl+C  ┃   Ctrl+V  ┃   trans   ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
+// ┃   trans   ┃   Ctrl+Z  ┃   Ctrl+X  ┃   Ctrl+C  ┃   Ctrl+V  ┃   trans   ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃     -     ┃   trans   ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃   trans   ┃    ADJ    ┃   trans   ┃   ┃   trans   ┃   trans   ┃   trans   ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp GRAVE   &kp SQT     &kp MINUS
-                &kp LC(LS(GRAVE)) &trans &trans     &trans      &trans          &trans      &kp EQUAL   &kp TILDE   &kp DQT     &kp UNDER
-    &trans      &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans          &trans      &trans      &trans      &trans      &trans      &trans
+                &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp STAR    &kp PLUS    &kp EQUAL
+                &kp LC(LS(GRAVE)) &kp LT &kp GT     &kp FSLH    &kp BSLH        &kp COLON   &kp SEMI    &kp SQT     &kp DQT     &kp QMARK
+    &trans      &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans          &trans      &trans      &trans      &trans      &kp MINUS   &trans
                                         &trans      &mo ADJ     &trans          &trans      &trans      &trans
                         >;
                 };
@@ -209,9 +237,9 @@ label= "SYM"                               ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "ADJ"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-// ADJUST LAYER - Bluetooth, Output, System controls (left) + Function keys (right)
+// ADJUST LAYER - Bluetooth, Output, System controls (left) + Function keys + GAME toggle (right)
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃  OUT BLE  ┃  BT PR 0  ┃  BT PR 1  ┃  BT PR 2  ┃   RESET   ┃   ┃   trans   ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
+//             ┃  OUT BLE  ┃  BT PR 0  ┃  BT PR 1  ┃  BT PR 2  ┃   RESET   ┃   ┃ TO GAME   ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃  BT CLR   ┃  BT NEXT  ┃   trans   ┃   trans   ┃ BOOTLOAD  ┃   ┃   trans   ┃    F4     ┃    F5     ┃    F6     ┃    F11    ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
@@ -222,10 +250,37 @@ label= "ADJ"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &out OUT_BLE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &sys_reset  &trans      &kp F7      &kp F8      &kp F9      &kp F12
+                &out OUT_BLE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &sys_reset  &to GAME    &kp F7      &kp F8      &kp F9      &kp F12
                 &bt BT_CLR  &bt BT_NXT  &trans       &trans      &bootloader     &trans      &kp F4      &kp F5      &kp F6      &kp F11
     &trans      &out OUT_USB &bt BT_PRV &trans       &trans      &studio_unlock  &trans      &kp F1      &kp F2      &kp F3      &kp F10     &trans
                                         &trans       &trans      &trans          &trans      &trans      &trans
+                        >;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                game_layer {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+label= "GAME"                              ;
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+// GAMING LAYER - Left side only, NO COMBOS for MMORPG/FPS (toggle on/off via ADJ layer)
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃     1     ┃     2     ┃     3     ┃     4     ┃     5     ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃   SHIFT   ┃     A     ┃     S     ┃     D     ┃     F     ┃     G     ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃   CTRL    ┃    ALT    ┃   SPACE   ┃   ┃ EXIT GAME ┃   trans   ┃   trans   ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+ bindings = <
+// ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
+
+                &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &trans      &trans      &trans      &trans      &trans
+                &kp Q       &kp W       &kp E       &kp R       &kp T           &trans      &trans      &trans      &trans      &trans
+    &kp LSHFT   &kp A       &kp S       &kp D       &kp F       &kp G           &trans      &trans      &trans      &trans      &trans      &trans
+                                        &kp LCTRL   &kp LALT    &kp SPACE       &to BASE    &trans      &trans
                         >;
                 };
 
