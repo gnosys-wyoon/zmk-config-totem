@@ -128,22 +128,23 @@
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "BASE"                              ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+// STUDIO CONFIG: No home row mods, all modifiers on thumbs
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃     Y     ┃     U     ┃     I     ┃     O     ┃     P     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃     A     ┃     S     ┃     D     ┃     F     ┃     G     ┃   ┃     H     ┃     J     ┃     K     ┃     L     ┃     ;     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃    DEL    ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     \     ┃
+// ┃   SHIFT   ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     \     ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃    ESC    ┃    LGUI   ┃    SPC    ┃   ┃   ENTER   ┃    TAB    ┃   BSPC    ┃
+//                                     ┃  ESC/Ctrl ┃  Win/NAVI ┃    SPC    ┃   ┃   ENTER   ┃  TAB/SYM  ┃  DEL/RAlt ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
-                &kp A   &mt LALT S  &mt LCTRL D &mt LSHFT F &kp G           &kp H       &mt RSHFT J &mt RCTRL K &mt RALT L  &mt RGUI SEMI
-    &kp DEL     &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp BSLH
-                                        &kp ESC   &lt NAV LGUI  &kp SPACE       &kp RET   &lt SYM TAB   &kp BSPC
+                &kp A       &kp S       &kp D       &kp F       &kp G           &kp H       &kp J       &kp K       &kp L       &kp SEMI
+    &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp BSLH
+                                    &mt LCTRL ESC &lt NAV LGUI &kp SPACE       &kp RET   &lt SYM TAB &mt RALT DEL
                         >;
                 };
 
@@ -154,23 +155,23 @@ label= "BASE"                              ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "NAVI"                              ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-// NAVIGATION & NUMBERS - Optimized for IDE and coding
+// STUDIO CONFIG: Numpad emulation + navigation
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃    ESC    ┃   HOME    ┃     UP    ┃    END    ┃     {     ┃   ┃     }     ┃     7     ┃     8     ┃     9     ┃     +     ┃
+//             ┃     1     ┃     2     ┃     3     ┃     4     ┃     5     ┃   ┃     6     ┃     7     ┃     8     ┃     9     ┃     0     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   SHIFT   ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃     [     ┃   ┃     ]     ┃     4     ┃     5     ┃     6     ┃     -     ┃
+//             ┃   BKSP    ┃    DEL    ┃     UP    ┃     =     ┃     {     ┃   ┃     }     ┃   KP4/←   ┃    KP5    ┃   KP6/→   ┃     '     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃    DEL    ┃   P UP    ┃  C WORD   ┃  P DOWN   ┃     (     ┃   ┃     )     ┃     1     ┃     2     ┃     3     ┃     *     ┃           ┃
+// ┃   SHIFT   ┃    TAB    ┃    LEFT   ┃    DOWN   ┃   RIGHT   ┃     (     ┃   ┃     )     ┃  KP1/End  ┃   KP2/↓   ┃  KP3/PgDn ┃     -     ┃     `     ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃           ┃           ┃   ┃    ADJ    ┃     0     ┃     .     ┃
+//                                     ┃           ┃           ┃    ALT    ┃   ┃    ADJ    ┃  KP0/Ins  ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp ESC     &kp HOME    &kp UP      &kp END     &kp LBRC        &kp RBRC    &kp N7      &kp N8      &kp N9      &kp PLUS
-                &kp LSHFT   &kp LEFT    &kp DOWN    &kp RIGHT   &kp LBKT        &kp RBKT    &kp N4      &kp N5      &kp N6      &kp MINUS
-    &trans      &kp DEL     &kp PG_UP   &kp CAPS    &kp PG_DN   &kp LPAR        &kp RPAR    &kp N1      &kp N2      &kp N3      &kp STAR    &trans
-                                        &trans      &trans      &trans          &mo ADJ     &kp N0      &kp DOT
+                &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
+                &kp BSPC    &kp DEL     &kp UP      &kp EQUAL   &kp LBRC        &kp RBRC    &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp SQT
+    &kp LSHFT   &kp TAB     &kp LEFT    &kp DOWN    &kp RIGHT   &kp LPAR        &kp RPAR    &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp MINUS   &kp GRAVE
+                                        &trans      &trans      &kp LALT        &mo ADJ     &kp KP_N0   &trans
                         >;
                 };
 
@@ -181,23 +182,23 @@ label= "NAVI"                              ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "SYM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-// PROGRAMMING SYMBOLS LAYER - All essential symbols for coding
+// SYMBOLS LAYER - Sparse layout matching Studio config with VSCode shortcuts
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ^     ┃     &     ┃     *     ┃     '     ┃     "     ┃
+//             ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ^     ┃     &     ┃     `     ┃     '     ┃     -     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     {     ┃     [     ┃     (     ┃     <     ┃     `     ┃   ┃     ~     ┃     >     ┃     )     ┃     ]     ┃     }     ┃
+//             ┃   Ctrl+~  ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   ┃   trans   ┃     =     ┃     ~     ┃     "     ┃     _     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃     |     ┃     -     ┃     =     ┃     +     ┃     \     ┃   ┃     /     ┃     _     ┃     :     ┃     ;     ┃     ?     ┃           ┃
+// ┃   trans   ┃   Ctrl+Z  ┃   Ctrl+X  ┃   Ctrl+C  ┃   Ctrl+V  ┃   trans   ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃           ┃    ADJ    ┃   ┃           ┃   REPT    ┃           ┃
+//                                     ┃   trans   ┃    ADJ    ┃   trans   ┃   ┃   trans   ┃   trans   ┃   trans   ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp STAR    &kp SQT     &kp DQT
-                &kp LBRC    &kp LBKT    &kp LPAR    &kp LT      &kp GRAVE       &kp TILDE   &kp GT      &kp RPAR    &kp RBKT    &kp RBRC
-    &trans      &kp PIPE    &kp MINUS   &kp EQUAL   &kp PLUS    &kp BSLH        &kp FSLH    &kp UNDER   &kp COLON   &kp SEMI    &kp QMARK   &trans
-                                        &trans      &trans      &mo ADJ         &trans      &trans      &trans  // key_repeat not available
+                &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp GRAVE   &kp SQT     &kp MINUS
+                &kp LC(LS(GRAVE)) &trans &trans     &trans      &trans          &trans      &kp EQUAL   &kp TILDE   &kp DQT     &kp UNDER
+    &trans      &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans          &trans      &trans      &trans      &trans      &trans      &trans
+                                        &trans      &mo ADJ     &trans          &trans      &trans      &trans
                         >;
                 };
 
@@ -208,22 +209,23 @@ label= "SYM"                               ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "ADJ"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+// ADJUST LAYER - Bluetooth, Output, and System controls matching Studio config
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃           ┃ BT CLEAR  ┃  OUT TOG  ┃           ┃   RESET   ┃   ┃           ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
+//             ┃  OUT BLE  ┃  BT PR 0  ┃  BT PR 1  ┃  BT PR 2  ┃   RESET   ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃           ┃ BT NEXT   ┃           ┃           ┃ BOOTLOAD  ┃   ┃           ┃    F4     ┃    F5     ┃    F6     ┃    F11    ┃
+//             ┃  BT CLR   ┃  BT NEXT  ┃   trans   ┃   trans   ┃ BOOTLOAD  ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃           ┃ BT PREV   ┃           ┃           ┃ STD UNLCK ┃   ┃           ┃    F1     ┃    F2     ┃    F3     ┃    F10    ┃           ┃
+// ┃   trans   ┃  OUT USB  ┃  BT PREV  ┃   trans   ┃   trans   ┃ STD UNLCK ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
+//                                     ┃   trans   ┃   trans   ┃   trans   ┃   ┃   trans   ┃   trans   ┃   trans   ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &trans      &bt BT_CLR  &out OUT_TOG &trans      &sys_reset      &trans      &kp F7      &kp F8      &kp F9      &kp F12
-                &trans      &bt BT_NXT  &trans       &trans      &bootloader     &trans      &kp F4      &kp F5      &kp F6      &kp F11  
-    &trans      &trans      &bt BT_PRV  &trans       &trans      &studio_unlock  &trans      &kp F1      &kp F2      &kp F3      &kp F10     &trans         
-                                        &trans       &trans      &trans          &trans      &trans      &trans      
+                &out OUT_BLE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &sys_reset  &trans      &trans      &trans      &trans      &trans
+                &bt BT_CLR  &bt BT_NXT  &trans       &trans      &bootloader     &trans      &trans      &trans      &trans      &trans
+    &trans      &out OUT_USB &bt BT_PRV &trans       &trans      &studio_unlock  &trans      &trans      &trans      &trans      &trans      &trans
+                                        &trans       &trans      &trans          &trans      &trans      &trans
                         >;
                 };
 
