@@ -239,20 +239,20 @@ label= "ADJ"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 // ADJUST LAYER - Bluetooth, Output, System controls (left) + Function keys + GAME toggle (right)
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃  OUT BLE  ┃  BT PR 0  ┃  BT PR 1  ┃  BT PR 2  ┃   RESET   ┃   ┃ TO GAME   ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
+//             ┃  OUT BLE  ┃  BT PR 0  ┃  BT PR 1  ┃  BT PR 2  ┃   RESET   ┃   ┃   trans   ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃  BT CLR   ┃  BT NEXT  ┃   trans   ┃   trans   ┃ BOOTLOAD  ┃   ┃   trans   ┃    F4     ┃    F5     ┃    F6     ┃    F11    ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃   trans   ┃  OUT USB  ┃  BT PREV  ┃   trans   ┃   trans   ┃ STD UNLCK ┃   ┃   trans   ┃    F1     ┃    F2     ┃    F3     ┃    F10    ┃   trans   ┃
+// ┃   trans   ┃  OUT USB  ┃  BT PREV  ┃   trans   ┃   trans   ┃ STD UNLCK ┃   ┃   trans   ┃    F1     ┃    F2     ┃    F3     ┃    F10    ┃ TO GAME   ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃   trans   ┃   trans   ┃   trans   ┃   ┃   trans   ┃   trans   ┃   trans   ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &out OUT_BLE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &sys_reset  &to GAME    &kp F7      &kp F8      &kp F9      &kp F12
+                &out OUT_BLE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &sys_reset  &trans      &kp F7      &kp F8      &kp F9      &kp F12
                 &bt BT_CLR  &bt BT_NXT  &trans       &trans      &bootloader     &trans      &kp F4      &kp F5      &kp F6      &kp F11
-    &trans      &out OUT_USB &bt BT_PRV &trans       &trans      &studio_unlock  &trans      &kp F1      &kp F2      &kp F3      &kp F10     &trans
+    &trans      &out OUT_USB &bt BT_PRV &trans       &trans      &studio_unlock  &trans      &kp F1      &kp F2      &kp F3      &kp F10     &to GAME
                                         &trans       &trans      &trans          &trans      &trans      &trans
                         >;
                 };
@@ -264,23 +264,23 @@ label= "ADJ"                               ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "GAME"                              ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-// GAMING LAYER - Left side only, NO COMBOS for MMORPG/FPS (toggle on/off via ADJ layer)
+// GAMING LAYER - Left side only, NO COMBOS for MMORPG/FPS (toggle via ADJ layer bottom right)
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     1     ┃     2     ┃     3     ┃     4     ┃     5     ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
+//             ┃    TAB    ┃     Q     ┃     W     ┃     E     ┃     R     ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃   SHIFT   ┃     A     ┃     S     ┃     D     ┃     F     ┃     G     ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃
+// ┃   CTRL    ┃   SHIFT   ┃     A     ┃     S     ┃     D     ┃     F     ┃   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃   trans   ┃ EXIT GAME ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃   CTRL    ┃    ALT    ┃   SPACE   ┃   ┃ EXIT GAME ┃   trans   ┃   trans   ┃
+//                                     ┃    ALT    ┃   trans   ┃   SPACE   ┃   ┃   trans   ┃   trans   ┃   trans   ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &trans      &trans      &trans      &trans      &trans
-                &kp Q       &kp W       &kp E       &kp R       &kp T           &trans      &trans      &trans      &trans      &trans
-    &kp LSHFT   &kp A       &kp S       &kp D       &kp F       &kp G           &trans      &trans      &trans      &trans      &trans      &trans
-                                        &kp LCTRL   &kp LALT    &kp SPACE       &to BASE    &trans      &trans
+                &kp TAB     &kp Q       &kp W       &kp E       &kp R           &trans      &trans      &trans      &trans      &trans
+    &kp LCTRL   &kp LSHFT   &kp A       &kp S       &kp D       &kp F           &trans      &trans      &trans      &trans      &trans      &to BASE
+                                        &kp LALT    &trans      &kp SPACE       &trans      &trans      &trans
                         >;
                 };
 
