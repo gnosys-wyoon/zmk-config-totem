@@ -99,10 +99,10 @@
                 key-positions = <10 11>;  // A + S
                 bindings = <&kp TAB>;
             };
-            combo_caps_word {
+            combo_caps {
                 timeout-ms = <40>;
                 key-positions = <18 19>;  // L + ;
-                bindings = <&caps_word>;
+                bindings = <&kp CAPS>;  // caps_word not available, using CAPS
             };
     };
 
@@ -169,7 +169,7 @@ label= "NAVI"                              ;
 
                 &kp ESC     &kp HOME    &kp UP      &kp END     &kp LBRC        &kp RBRC    &kp N7      &kp N8      &kp N9      &kp PLUS
                 &kp LSHFT   &kp LEFT    &kp DOWN    &kp RIGHT   &kp LBKT        &kp RBKT    &kp N4      &kp N5      &kp N6      &kp MINUS
-    &trans      &kp DEL     &kp PG_UP   &caps_word  &kp PG_DN   &kp LPAR        &kp RPAR    &kp N1      &kp N2      &kp N3      &kp STAR    &trans
+    &trans      &kp DEL     &kp PG_UP   &kp CAPS    &kp PG_DN   &kp LPAR        &kp RPAR    &kp N1      &kp N2      &kp N3      &kp STAR    &trans
                                         &trans      &trans      &trans          &mo ADJ     &kp N0      &kp DOT
                         >;
                 };
@@ -197,7 +197,7 @@ label= "SYM"                               ;
                 &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp STAR    &kp SQT     &kp DQT
                 &kp LBRC    &kp LBKT    &kp LPAR    &kp LT      &kp GRAVE       &kp TILDE   &kp GT      &kp RPAR    &kp RBKT    &kp RBRC
     &trans      &kp PIPE    &kp MINUS   &kp EQUAL   &kp PLUS    &kp BSLH        &kp FSLH    &kp UNDER   &kp COLON   &kp SEMI    &kp QMARK   &trans
-                                        &trans      &trans      &mo ADJ         &trans      &key_repeat &trans
+                                        &trans      &trans      &mo ADJ         &trans      &trans      &trans  // key_repeat not available
                         >;
                 };
 
