@@ -24,22 +24,92 @@
 #define TVP2 5
 
 &mt {
-  quick-tap-ms = <100>;
+  quick-tap-ms = <125>;
   global-quick-tap;
-  flavor = "tap-preferred";
-  tapping-term-ms = <170>;
+  flavor = "balanced";
+  tapping-term-ms = <200>;
 };
 
 / {
      combos {
             compatible = "zmk,combos";
+
+            // Essential escape combos
             combo_esc {
-                timeout-ms = <50>;
+                timeout-ms = <40>;
                 key-positions = <0 1>;
                 bindings = <&kp ESC>;
             };
+
+            // Programming brackets - easier vertical combos
+            combo_lbkt {
+                timeout-ms = <40>;
+                key-positions = <3 13>;  // R + C
+                bindings = <&kp LBKT>;
+            };
+            combo_rbkt {
+                timeout-ms = <40>;
+                key-positions = <6 16>;  // U + M
+                bindings = <&kp RBKT>;
+            };
+            combo_lbrc {
+                timeout-ms = <40>;
+                key-positions = <4 14>;  // T + V
+                bindings = <&kp LBRC>;
+            };
+            combo_rbrc {
+                timeout-ms = <40>;
+                key-positions = <5 15>;  // Y + N
+                bindings = <&kp RBRC>;
+            };
+            combo_lpar {
+                timeout-ms = <40>;
+                key-positions = <2 12>;  // E + X
+                bindings = <&kp LPAR>;
+            };
+            combo_rpar {
+                timeout-ms = <40>;
+                key-positions = <7 17>;  // I + COMMA
+                bindings = <&kp RPAR>;
+            };
+
+            // Common programming symbols
+            combo_grave {
+                timeout-ms = <40>;
+                key-positions = <0 10>;  // Q + A
+                bindings = <&kp GRAVE>;
+            };
+            combo_tilde {
+                timeout-ms = <40>;
+                key-positions = <9 19>;  // P + ;
+                bindings = <&kp TILDE>;
+            };
+            combo_pipe {
+                timeout-ms = <40>;
+                key-positions = <14 15>;  // V + B
+                bindings = <&kp PIPE>;
+            };
+            combo_under {
+                timeout-ms = <40>;
+                key-positions = <13 14>;  // C + V
+                bindings = <&kp UNDER>;
+            };
+
+            // Quick tab/caps word for coding
+            combo_tab {
+                timeout-ms = <40>;
+                key-positions = <10 11>;  // A + S
+                bindings = <&kp TAB>;
+            };
+            combo_caps_word {
+                timeout-ms = <40>;
+                key-positions = <18 19>;  // L + ;
+                bindings = <&caps_word>;
+            };
+
+            // TVP toggle (keeping original)
             combo_tvp {
-                timeout-ms = <100>;
+                timeout-ms = <40>;
                 key-positions = <11 12 13>;
                 bindings = <&tog TVP1>;
             };
@@ -93,22 +163,23 @@ label= "BASE"                              ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "NAVI"                              ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+// NAVIGATION & NUMBERS - Optimized for IDE and coding
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃    ESC    ┃  BT_CLR   ┃     UP    ┃     =     ┃     {     ┃   ┃     }     ┃     7     ┃     8     ┃     9     ┃     +     ┃
+//             ┃    ESC    ┃   HOME    ┃     UP    ┃    END    ┃     {     ┃   ┃     }     ┃     7     ┃     8     ┃     9     ┃     +     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃   SHIFT   ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃     [     ┃   ┃     ]     ┃     4     ┃     5     ┃     6     ┃     -     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃    DEL    ┃   P UP    ┃  C LOCK   ┃  P DOWN   ┃     (     ┃   ┃     )     ┃     1     ┃     2     ┃     3     ┃     *     ┃           ┃
+// ┃           ┃    DEL    ┃   P UP    ┃  C WORD   ┃  P DOWN   ┃     (     ┃   ┃     )     ┃     1     ┃     2     ┃     3     ┃     *     ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃           ┃           ┃   ┃    ADJ    ┃     0     ┃           ┃
+//                                     ┃           ┃           ┃           ┃   ┃    ADJ    ┃     0     ┃     .     ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp ESC     &bt BT_CLR  &kp UP      &kp EQUAL   &kp LBRC        &kp RBRC    &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_PLUS
-                &kp LSHFT   &kp LEFT    &kp DOWN    &kp RIGHT   &kp LBKT        &kp RBKT    &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_MINUS
-    &trans      &kp DEL     &kp PG_UP   &kp CAPS    &kp PG_DN   &kp LPAR        &kp RPAR    &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_MULTIPLY &trans      
-                                        &trans      &trans      &trans          &mo ADJ     &kp KP_N0   &trans      
+                &kp ESC     &kp HOME    &kp UP      &kp END     &kp LBRC        &kp RBRC    &kp N7      &kp N8      &kp N9      &kp PLUS
+                &kp LSHFT   &kp LEFT    &kp DOWN    &kp RIGHT   &kp LBKT        &kp RBKT    &kp N4      &kp N5      &kp N6      &kp MINUS
+    &trans      &kp DEL     &kp PG_UP   &caps_word  &kp PG_DN   &kp LPAR        &kp RPAR    &kp N1      &kp N2      &kp N3      &kp STAR    &trans
+                                        &trans      &trans      &trans          &mo ADJ     &kp N0      &kp DOT
                         >;
                 };
 
@@ -119,22 +190,23 @@ label= "NAVI"                              ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "SYM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+// PROGRAMMING SYMBOLS LAYER - All essential symbols for coding
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ˆ     ┃     &     ┃     Ü     ┃     '     ┃     "     ┃
+//             ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ^     ┃     &     ┃     *     ┃     '     ┃     "     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     Ä     ┃           ┃    SZ     ┃           ┃           ┃   ┃   MUTE    ┃   YEN     ┃   EURO    ┃  POUND    ┃     Ö     ┃
+//             ┃     {     ┃     [     ┃     (     ┃     <     ┃     `     ┃   ┃     ~     ┃     >     ┃     )     ┃     ]     ┃     }     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃  EMAIL1   ┃  EMAIL2   ┃           ┃           ┃           ┃   ┃   VOL-    ┃   VOL+    ┃   LAST    ┃   NEXT    ┃     \     ┃           ┃
+// ┃           ┃     |     ┃     -     ┃     =     ┃     +     ┃     \     ┃   ┃     /     ┃     _     ┃     :     ┃     ;     ┃     ?     ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃           ┃    ADJ    ┃   ┃           ┃           ┃           ┃
+//                                     ┃           ┃           ┃    ADJ    ┃   ┃           ┃   REPT    ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp RA(U)   &kp SQT     &kp DQT       
-                &kp RA(A)   &trans      &kp RA(S)   &trans      &trans          &kp C_MUTE  &kp LS(RA(N4)) &kp RA(N5) &kp RA(N4)   &kp RA(O) 
-    &trans      &kp RA(F18) &kp RA(F19) &trans      &trans      &trans          &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_NEXT  &kp BSLH   &trans         
-                                        &trans      &trans      &mo ADJ         &trans      &kp C_PP    &trans      
+                &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp STAR    &kp SQT     &kp DQT
+                &kp LBRC    &kp LBKT    &kp LPAR    &kp LT      &kp GRAVE       &kp TILDE   &kp GT      &kp RPAR    &kp RBKT    &kp RBRC
+    &trans      &kp PIPE    &kp MINUS   &kp EQUAL   &kp PLUS    &kp BSLH        &kp FSLH    &kp UNDER   &kp COLON   &kp SEMI    &kp QMARK   &trans
+                                        &trans      &trans      &mo ADJ         &trans      &key_repeat &trans
                         >;
                 };
 
